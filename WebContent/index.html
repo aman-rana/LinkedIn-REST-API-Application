@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>LinkedIn Demonstration</title>
+<link rel="stylesheet" type="text/css" href="css/linkedIn.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/linkedIn.js"></script>
+</head>
+<body>
+	<table id="linkedInDemo"  style="table-layout: fixed; width: 100%;">
+		<thead>
+			<tr>
+				<td colspan="2" style="text-transform: capitalize;">
+				<h1>LinkedIn API Demonstration</h1>
+				</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td width="50%" >	
+					<ul id="api">
+						<li class="green" onclick="display(this);"><a href="#">Authentication</a></li>
+						<li class="orange" onclick="display(this);"><a href="#">Company LookUp API</a></li>
+						<li class="blue" onclick="display(this);"><a href="#">Company Analytics</a></li>
+						<!-- The following is hidden as it is not working currently @see : http://stackoverflow.com/questions/28378586/error-in-targeting-company-shares-using-json -->
+						<!--  <li class="purple" onclick="display(this);"><a href="#">Company Posts</a></li>  -->
+					</ul>
+				</td>
+				<td width="50%" id="apiFeatures">	
+					<div class="info" style="margin-left: 38px;">Here, select the type of Information to fetch</div>
+					<div class="display">
+					<ul id="apiFeaturesAuthorize">
+						<li class="green" onclick="getJSPContent('authenticate/authorize.jsp'); return false;"><a href="#">Get Access Token</a></li>
+					</ul>
+					<ul id="apiFeaturesCompany">
+						<li class="orange" onclick="getJSPContent('company/searchCompanyProfile.jsp',this); return false;"><a href="#">Company Profile Search</a></li>
+						<li class="orange" onclick="getJSPContent('company/readCompanyUpdates.jsp',this); return false;"><a href="#">Read Company Updates</a></li>
+						<li class="orange" onclick="getJSPContent('company/postCompanyUpdate.jsp',this); return false;"><a href="#">Post Company Updates</a></li>
+					</ul>
+					<ul id="apiFeaturesAnalytics">
+						<li class="blue" onclick="getJSPContent('company/analytics/historicalFollower.jsp',this); return false;"><a href="#">Historical Follower Statistics</a></li>
+						<li class="blue" onclick="getJSPContent('company/analytics/historicalStatusUpdate.jsp',this); return false;"><a href="#">Historical Status Update Statistics</a></li>
+						<li class="blue" onclick="getJSPContent('company/analytics/companyStatistics.jsp',this); return false;"><a href="#">Company Statistics</a></li>
+					</ul>
+					<ul id="apiFeaturesCompanyShares">
+						<li class="purple" onclick="getJSPContent('company/targettedCompanyUpdate.jsp',this); return false;"><a href="#">Target Company Updates</a></li>
+					</ul>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" id="apiData">
+					<div class="info" style="margin-left: 38px;">Here, the information requested from API would be displayed</div>
+					<div class="display">
+						<div id="data" style="width: 100%;"></div>
+						<div id='loader' align="center">Fetching Data<br/><img alt="loading" src="./images/13.gif"></div>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+<script type="text/javascript">
+$( document ).ready(function() {
+	$('.display').hide();
+});
+</script>	
+</body>
+</html>

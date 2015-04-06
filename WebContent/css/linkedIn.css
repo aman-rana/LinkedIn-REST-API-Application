@@ -1,0 +1,86 @@
+@CHARSET "ISO-8859-1";
+
+/*
+see - http://jsfiddle.net/lesson8/2tWb6/light/
+*/
+
+body {
+    cursor: default;
+    font-size: 14px;
+    line-height: 21px;
+    font-family: "Segoe UI","Helvetica",Garuda,Arial,sans-serif;
+}
+
+#linkedInDemo {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    border:1px solid rgb(204, 204, 204);
+    border-radius:3px;
+    box-shadow:0px 1px 2px rgb(209, 209, 209);
+}
+
+#linkedInDemo td,table th{
+	border:1px solid rgb(204, 204, 204);
+}
+
+.linkedInApi th:FIRST-CHILD tr td{
+		text-align: left;
+}
+
+.linkedInApi td,table th {
+	border: none !important;
+}
+
+h1 {
+  	font: 250%/80% "Lucida Grande",Arial,sans-serif;
+  	position : relative;
+  	color:#FFF;
+	background-color:#000;
+	padding : 30px 0px 30px 30px;
+	margin:0px;
+}
+
+
+ul {
+    margin-bottom: 14px;
+    list-style: none;
+}
+li { width: 300px; height: 30px;  margin: 0 0 7px 0; }
+
+li a{
+	display: block;
+	width: 300px;
+	height: 30px;
+	margin: 0 0 7px 0;
+	font-size: 15px;
+	color: #222;
+	padding: 5px 0 0 20px;
+	text-decoration: none;
+	background: #F7F5F2;
+}
+
+#api li a:hover { 
+	background: #C0C0D0 url(../images/arrowRight.png) 97% center no-repeat;
+}
+
+#api li a:active { 
+	background: #808080 url(../images/arrowRight.png) 97% center no-repeat;
+}
+
+ul[id*='apiFeatures'] li a:hover { 
+	background: #C0C0D0 url(../images/arrowDown.png) 97% center no-repeat;
+}
+
+ul[id*='apiFeatures'] li a:active { 
+	background: #808080 url(../images/arrowDown.png) 97% center no-repeat;
+}
+
+.orange { border-left: 5px solid #F5876E; }
+
+.blue{ border-left: 5px solid #61A8DC; }
+
+.green{ border-left: 5px solid #8EBD40; }
+
+.purple { border-left: 5px solid #988CC3; }
+
+.gold { border-left: 5px solid #D8C86E; }
